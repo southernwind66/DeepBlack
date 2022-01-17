@@ -32,7 +32,7 @@ def getAllLinks():
 
         id = dpb_contract.functions.tokenByIndex(i).call()
         link = getIPFSLink(id)
-        df.append({'ID':id, 'IPFS Link':link}, ignore_index=True)
+        df = df.append({'ID':id, 'IPFS Link':link}, ignore_index=True)
         time.sleep(0.2)
     
     df.to_csv("deepblackipfslinks.csv")
